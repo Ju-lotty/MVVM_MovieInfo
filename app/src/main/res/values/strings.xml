@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Movie_App</string>
+    <string name="error">문제가 발생하였습니다.</string>
+    <string name="movie_img">movie_img</string>
+    <string name="movie_name">Movie Name</string>
+    <string name="movie_sub_title">movie_sub_title</string>
+    <string name="movie_information">Movie Information</string>
+    <string name="opening_date">Opening Date : </string>
+    <string name="open_day">2023.02.28</string>
+</resources>
