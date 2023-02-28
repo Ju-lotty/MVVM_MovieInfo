@@ -1,10 +1,20 @@
 <resources>
     <string name="app_name">Movie_App</string>
-    <string name="error">문제가 발생하였습니다.</string>
-    <string name="movie_img">movie_img</string>
-    <string name="movie_name">Movie Name</string>
-    <string name="movie_sub_title">movie_sub_title</string>
-    <string name="movie_information">Movie Information</string>
-    <string name="opening_date">Opening Date : </string>
-    <string name="open_day">2023.02.28</string>
+    <string name="txt_error">Something went wrong.</string>
+    <string name="txt_movie_img">movie_img</string>
+    <string name="txt_movie_name">Movie Name</string>
+    <string name="txt_movie_sub_title">movie_sub_title</string>
+    <string name="txt_movie_information">Movie Information</string>
+    <string name="txt_opening_date">Opening Date : </string>
+    <string name="txt_open_day">2023.02.28</string>
+    <string name="txt_rating_score">7.5</string>
+    <string name="txt_rating">Rating : </string>
+    <string name="txt_runtime">Rum Time : </string>
+    <string name="txt_moviehour">1H 30M</string>
+    <string name="txt_budget">Budget : </string>
+    <string name="txt_total_budget">130,000</string>
+    <string name="txt_total_revenue">120,000</string>
+    <string name="txt_revenue">Revenue :</string>
+    <string name="txt_overview">OverView</string>
+    <string name="txt_this_line_is_overview">this line is overview...........</string>
 </resources>

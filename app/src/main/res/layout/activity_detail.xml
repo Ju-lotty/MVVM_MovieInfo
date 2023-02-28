@@ -20,11 +20,18 @@
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_top"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.70" />
+            app:layout_constraintGuide_percent="0.60" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,28 +39,28 @@
             android:orientation="vertical">
 
             <ProgressBar
-                android:id="@+id/progress_Bar"
+                android:id="@+id/movie_progress_Bar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:visibility="gone" />
 
             <TextView
-                android:id="@+id/txt_Error"
+                android:id="@+id/movie_txt_Error"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@string/error"
+                android:text="@string/txt_error"
                 android:visibility="gone" />
 
         </LinearLayout>
 
 
         <ImageView
-            android:id="@+id/img_movie"
+            android:id="@+id/movie_img_poster"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:contentDescription="@string/movie_img"
+            android:layout_height="430dp"
+            android:contentDescription="@string/txt_movie_img"
             android:src="@drawable/ic_detail_img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +70,7 @@
             android:id="@+id/movie_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/movie_name"
+            android:text="@string/txt_movie_name"
             app:layout_constraintStart_toStartOf="@id/guide_start"
             app:layout_constraintTop_toTopOf="@id/guide_top" />
 
@@ -72,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@string/movie_sub_title"
+            android:text="@string/txt_movie_sub_title"
             app:layout_constraintStart_toStartOf="@id/guide_start"
             app:layout_constraintTop_toTopOf="@id/guide_top" />
 
@@ -80,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="@string/movie_information"
+            android:text="@string/txt_movie_information"
             app:layout_constraintStart_toStartOf="@id/guide_start"
             app:layout_constraintTop_toTopOf="@id/guide_top" />
 
@@ -89,17 +96,109 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
-            android:text="@string/opening_date"
+            android:text="@string/txt_opening_date"
             app:layout_constraintStart_toStartOf="@id/guide_start"
             app:layout_constraintTop_toTopOf="@id/guide_top" />
 
         <TextView
+            android:id="@+id/movie_open_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
-            android:text="@string/open_day"
+            android:text="@string/txt_open_day"
             app:layout_constraintStart_toEndOf="@id/txt_opening_date"
             app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/txt_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:text="@string/txt_rating"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:text="@string/txt_rating_score"
+            app:layout_constraintStart_toEndOf="@id/txt_rating"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/txt_runtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:text="@string/txt_runtime"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/movie_runtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:text="@string/txt_moviehour"
+            app:layout_constraintStart_toEndOf="@id/txt_runtime"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/txt_budget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:text="@string/txt_budget"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/movie_budget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:text="@string/txt_total_budget"
+            app:layout_constraintStart_toEndOf="@id/txt_budget"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/txt_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="210dp"
+            android:text="@string/txt_revenue"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/movie_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="210dp"
+            android:text="@string/txt_total_revenue"
+            app:layout_constraintStart_toEndOf="@id/txt_revenue"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+
+        <TextView
+            android:id="@+id/txt_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:text="@string/txt_overview"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+        <TextView
+            android:id="@+id/movie_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_this_line_is_overview"
+            app:layout_constraintEnd_toEndOf="guide_end"
+            app:layout_constraintStart_toStartOf="@id/guide_start"
+            app:layout_constraintTop_toBottomOf="@id/txt_overview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </android.support.v4.widget.NestedScrollView>
