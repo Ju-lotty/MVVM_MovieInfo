@@ -12,9 +12,9 @@ class NetworkState(val status: Status, val msg: String) {
 
     //이 클래스에는 "NetworkState" 유형의 "LOADED", "LOADING" 및 "ERROR"의 세 가지 정적 속성을 초기화 하는 동반 개체
     companion object {
-        private val LOADED: NetworkState
-        private val LOADING: NetworkState
-        private val ERROR: NetworkState
+        val LOADED: NetworkState
+        val LOADING: NetworkState
+        val ERROR: NetworkState
         //클래스 로드 시 자동 초기화 되는 변수들 네트워크 상태에 따라 status 상태, msg가 초기화
         init {
             LOADED = NetworkState(Status.SUCCESS, "Success")
