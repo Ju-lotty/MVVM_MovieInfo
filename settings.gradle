@@ -1,15 +1,22 @@
 pluginManagement {
     repositories {
         google()
+        //noinspection JcenterRepositoryObsolete
+        jcenter()
         mavenCentral()
         gradlePluginPortal()
+        maven { url 'https://maven.google.com' }
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
+        //noinspection JcenterRepositoryObsolete
+        jcenter()
         mavenCentral()
+        maven { url 'https://maven.google.com' }
+
     }
 }
 rootProject.name = "Movie_App"
