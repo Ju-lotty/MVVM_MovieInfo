@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".details.DetailMovie">
+    tools:context=".view.DetailMovie">
 
     <data>
 
         <variable
             name="movie"
-            type="com.example.movie_app.data.value_object.MovieDetails" />
+            type="com.example.movie_app.model.MovieDetails" />
     </data>
 
     <ScrollView
@@ -19,7 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".details.DetailMovie">
+            tools:context=".view.DetailMovie">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guide_overview_start"

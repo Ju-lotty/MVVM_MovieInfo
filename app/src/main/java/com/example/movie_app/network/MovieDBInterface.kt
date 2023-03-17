@@ -1,5 +1,5 @@
-package com.example.movie_app.data.api
-import com.example.movie_app.data.value_object.MovieDetails
+package com.example.movie_app.network
+import com.example.movie_app.model.MovieDetails
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path

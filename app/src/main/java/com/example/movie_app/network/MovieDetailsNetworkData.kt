@@ -1,10 +1,9 @@
-package com.example.movie_app.data.repository
+package com.example.movie_app.network
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.movie_app.data.api.MovieDBInterface
-import com.example.movie_app.data.value_object.MovieDetails
+import com.example.movie_app.model.MovieDetails
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 

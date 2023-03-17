@@ -1,4 +1,4 @@
-package com.example.movie_app.details
+package com.example.movie_app.view
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -9,16 +9,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.movie_app.R
-import com.example.movie_app.data.api.MovieDBClient
-import com.example.movie_app.data.api.MovieDBInterface
-import com.example.movie_app.data.api.POSTER_BASE_URL
-import com.example.movie_app.data.repository.NetworkState
-import com.example.movie_app.data.value_object.MovieDetails
+import com.example.movie_app.network.MovieDBClient
+import com.example.movie_app.network.MovieDBInterface
+
+import com.example.movie_app.network.NetworkState
+import com.example.movie_app.model.MovieDetails
+import com.example.movie_app.model.MovieDetailsRepository
 import com.example.movie_app.databinding.ActivityDetailBinding
+import com.example.movie_app.network.POSTER_BASE_URL
+import com.example.movie_app.viewmodel.DetailsViewModel
 import java.text.NumberFormat
 import java.util.*
 
-class DetailMovie : AppCompatActivity() {
+class DetailMovie: AppCompatActivity() {
     // 나중에 초기화 할 binding, viewModel, movieRepository 선언
     private lateinit var binding: ActivityDetailBinding
     private lateinit var viewModel: DetailsViewModel
@@ -69,14 +72,30 @@ class DetailMovie : AppCompatActivity() {
     }
 
     private fun getViewModel(movieId: Int): DetailsViewModel {
+        /*
+        필요한 객체를 만들기 위한 interface를 선언해서 유연하게 구현해서 사용할 수 있도록 하는 패턴
+        ViewModelProvider로 ViewModel객체를 만들때 초기 값을 전달하는 것이 금지, Factory 패턴을 사용
+        ViewModelProvider.Factory 인터페이스를 구현 → DetailsViewModel의 인스턴스를 만들 수 있는 팩터리를 생성
+         */
+
         val viewModelFactory = object : ViewModelProvider.Factory {
+            // 생성 메서드를 재정의합니다.
+            // <T : ViewModel> create 메서드가 ViewModel의 하위 클래스여야 하는 유형 매개변수 T를 사용하도록 지정
+            // modelClass 매개변수는 생성하려는 ViewModel의 클래스를 지정
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                //DetailsViewModel 개체를 일반 유형 T로 캐스팅할 때 발생하는 확인되지 않은 캐스팅 경고를 억제하는 데 사용됩니다.
+                //DetailsViewModel 개체를 일반 유형 T로 캐스팅할 때 발생하는 확인되지 않은 캐스팅 경고를 억제
                 @Suppress("UNCHECKED_CAST")
-                // 생성자에 전달된 movieRepository 및 movieId 매개변수가 있는 새로운 DetailsViewModel 객체를 T 유형으로 캐스트하여 반환합니다.
+                // movieRepository 및 movieId 매개변수를 사용하여 DetailsViewModel의 새 인스턴스를 생성하고 결과를 T 유형으로 캐스팅
                 return DetailsViewModel(movieRepository, movieId) as T
             }
         }
+        /*
+        마지막으로 ViewModelProvider는 방금 생성한 팩토리를 사용하여
+        DetailsViewModel의 인스턴스를 검색하는 데 사용되며 Activity 또는 Fragment
+        및 DetailsViewModel::class.java 참조를 매개변수로 전달합니다.
+        ViewModelProvider는 팩토리를 사용하여 DetailsViewModel이 아직 없는 경우 새 인스턴스를 생성하거나 이미 사용 가능한 경우 기존 인스턴스를 반환합니다.
+        */
         return ViewModelProvider(this, viewModelFactory)[DetailsViewModel::class.java]
     }
 }
+

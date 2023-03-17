@@ -1,8 +1,8 @@
-    package com.example.movie_app.data.value_object
-    import com.google.gson.annotations.SerializedName
+package com.example.movie_app.model
+import com.google.gson.annotations.SerializedName
 
-    // 유저가 선택한 영화에 상세 정보를 나타낼 때 필요한 데이터
-    data class MovieDetails(
+// 유저가 선택한 영화에 상세 정보를 나타낼 때 필요한 데이터
+data class MovieDetails(
         val budget: Int,
         val id: Int,
         val overview: String,
@@ -19,4 +19,4 @@
         val video: Boolean,
         @SerializedName("vote_average")
         val rating: Double
-    )
+)

@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.movie_app.details.DetailMovie
+import com.example.movie_app.view.DetailMovie
 
 class MainActivity : AppCompatActivity() {
     private val btn: Button by lazy {

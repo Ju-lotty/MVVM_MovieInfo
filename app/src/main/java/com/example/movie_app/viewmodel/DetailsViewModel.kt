@@ -1,9 +1,10 @@
-package com.example.movie_app.details
+package com.example.movie_app.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.movie_app.data.repository.NetworkState
-import com.example.movie_app.data.value_object.MovieDetails
+import com.example.movie_app.model.MovieDetails
+import com.example.movie_app.model.MovieDetailsRepository
+import com.example.movie_app.network.NetworkState
 import io.reactivex.disposables.CompositeDisposable
 
 // MovieDetailsRepository 유형의 movieRepository와 Int 유형의 movideId  두 매개변수를 사용

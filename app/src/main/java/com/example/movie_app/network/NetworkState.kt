@@ -1,4 +1,4 @@
-package com.example.movie_app.data.repository
+package com.example.movie_app.network
 
 // RUNNING, SUCCESS, FAILED 세 가지 가능한 값이 있는 "Status"라는 열거형 클래스 선언
 enum class Status {

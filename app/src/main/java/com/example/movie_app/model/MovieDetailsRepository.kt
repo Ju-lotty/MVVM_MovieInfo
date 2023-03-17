@@ -1,10 +1,9 @@
-package com.example.movie_app.details
+package com.example.movie_app.model
 
 import androidx.lifecycle.LiveData
-import com.example.movie_app.data.api.MovieDBInterface
-import com.example.movie_app.data.repository.MovieDetailsNetworkData
-import com.example.movie_app.data.repository.NetworkState
-import com.example.movie_app.data.value_object.MovieDetails
+import com.example.movie_app.network.MovieDBInterface
+import com.example.movie_app.network.MovieDetailsNetworkData
+import com.example.movie_app.network.NetworkState
 import io.reactivex.disposables.CompositeDisposable
 
 // MovieDBInterface 유형의 apiService라는 하나의 매개변수를 사용

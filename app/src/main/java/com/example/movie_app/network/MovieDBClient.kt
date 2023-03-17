@@ -1,4 +1,4 @@
-package com.example.movie_app.data.api
+package com.example.movie_app.network
 
 import com.example.movie_app.BuildConfig
 import okhttp3.Interceptor
