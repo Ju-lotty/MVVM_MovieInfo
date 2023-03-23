@@ -15,7 +15,8 @@ import java.util.concurrent.TimeUnit
  */
 const val BASE_URL = "https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
-
+const val FIRST_PAGE = 1
+const val POST_PER_PAGE = 20
 // 싱글턴 패턴이 적용 된 MovieDBClient 클래스 정의와 인스턴스 생성을 동시에 수행
 // Retrofit 라이브러리를 사용하여 API와 통신하는데 필요한 Retrofit 인스턴스를 생성하는 함수를 포함
 object MovieDBClient {

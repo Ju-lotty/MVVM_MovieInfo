@@ -1,8 +1,10 @@
 package com.example.movie_app.network
 import com.example.movie_app.model.MovieDetails
+import com.example.movie_app.model.MoviePopulars
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 interface MovieDBInterface {
@@ -15,4 +17,7 @@ interface MovieDBInterface {
     @GET("movie/{movie_id}")
     //경로 매개변수 movie_id를 id로 변경. Single 단일 값을 내보낸 다음 완료되는 RxJava 비동기 요청 및 응답을 처리하는 데 사용
     fun getMovieDetails(@Path("movie_id")id: Int): Single<MovieDetails>
+
+    @GET("movie/popular")
+    fun getPopularMovies(@Query("page")page: Int): Single<MoviePopulars>
 }

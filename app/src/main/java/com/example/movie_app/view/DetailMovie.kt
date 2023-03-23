@@ -29,8 +29,6 @@ class DetailMovie: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
-        //getIntExtra를 통해 MainActivity에서 보낸 Int형 값을 받음
-        val movieId: Int = intent.getIntExtra("id",1)
 
         // MovieDBClient 및 MovieDetailsRepository 클래스를 사용하여 apiService 및 movieRepository를 초기화합니다.
         val apiService: MovieDBInterface = MovieDBClient.getClient()
@@ -38,6 +36,7 @@ class DetailMovie: AppCompatActivity() {
 
 
         //getViewModel 메서드를 호출하여 movieRepository 및 movieId를 사용하여 DetailsViewModel 인스턴스를 얻고 viewModel에 할당
+        val movieId = intent.getIntExtra("id", 1)
         viewModel = getViewModel(movieId)
 
 
